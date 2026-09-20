@@ -1,0 +1,55 @@
+{
+  "note": "GA4 client (server container). gtagMeasurementIds rows list the measurement ids this client claims.",
+  "body": {
+    "name": "GA4 Client",
+    "type": "gaaw_client",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "activateDefaultPaths",
+        "value": "true"
+      },
+      {
+        "type": "boolean",
+        "key": "activateGtagSupport",
+        "value": "true"
+      },
+      {
+        "type": "boolean",
+        "key": "activateResponseCompression",
+        "value": "true"
+      },
+      {
+        "type": "boolean",
+        "key": "activateGeoResolution",
+        "value": "true"
+      },
+      {
+        "type": "boolean",
+        "key": "activateDependencyServing",
+        "value": "true"
+      },
+      {
+        "type": "template",
+        "key": "cookieManagement",
+        "value": "js"
+      },
+      {
+        "type": "list",
+        "key": "gtagMeasurementIds",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "measurementId",
+                "value": "G-XXXXXXXXXX"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

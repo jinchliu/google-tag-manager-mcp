@@ -1,0 +1,7 @@
+{
+  "note": "Free containers allow at most 3 concurrent workspaces.",
+  "body": {
+    "name": "ga4-ecommerce",
+    "description": "Add GA4 ecommerce events"
+  }
+}

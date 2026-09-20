@@ -1,0 +1,57 @@
+{
+  "note": "GA4 event tag (web). eventSettingsTable rows add event parameters; measurementIdOverride usually references a constant variable. firingTriggerId holds trigger ids from gtm_list('triggers').",
+  "body": {
+    "name": "GA4 - purchase",
+    "type": "gaawe",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "eventName",
+        "value": "purchase"
+      },
+      {
+        "type": "template",
+        "key": "measurementIdOverride",
+        "value": "{{C - GA4 measurement ID}}"
+      },
+      {
+        "type": "boolean",
+        "key": "sendEcommerceData",
+        "value": "true"
+      },
+      {
+        "type": "template",
+        "key": "getEcommerceDataFrom",
+        "value": "dataLayer"
+      },
+      {
+        "type": "list",
+        "key": "eventSettingsTable",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "parameter",
+                "value": "currency"
+              },
+              {
+                "type": "template",
+                "key": "parameterValue",
+                "value": "{{DLV - currency}}"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "firingTriggerId": [
+      "12"
+    ],
+    "tagFiringOption": "oncePerEvent",
+    "consentSettings": {
+      "consentStatus": "notSet"
+    }
+  }
+}

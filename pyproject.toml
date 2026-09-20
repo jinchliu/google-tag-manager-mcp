@@ -1,0 +1,82 @@
+[project]
+name = "google-tag-manager-mcp"
+version = "0.1.0"
+# Kept in step with SERVER_DESCRIPTION in server.py; tests/test_protocol.py asserts it.
+description = "A stdio MCP server for Google Tag Manager with full API coverage."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.14"
+keywords = [
+    "mcp",
+    "model-context-protocol",
+    "google-tag-manager",
+    "gtm",
+    "analytics",
+    "llm",
+]
+# No "License ::" classifier: the PEP 639 license expression above replaces it,
+# and PyPI rejects an upload that carries both.
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Internet :: WWW/HTTP :: Site Management",
+]
+dependencies = [
+    "google-api-python-client>=2.200.0",
+    "mcp>=2.2,<3",
+]
+
+# PyPI freezes these per version, so they have to be right before the first tag.
+[project.urls]
+Homepage = "https://github.com/jinchliu/google-tag-manager-mcp"
+Repository = "https://github.com/jinchliu/google-tag-manager-mcp"
+Issues = "https://github.com/jinchliu/google-tag-manager-mcp/issues"
+
+[project.scripts]
+google-tag-manager-mcp = "google_tag_manager_mcp:main"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.3.1",
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "ruff>=0.16.8",
+]
+
+[tool.ruff]
+target-version = "py314"
+src = ["src", "tests"]
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D"]
+
+[tool.mypy]
+strict = true
+files = ["src"]
+
+[[tool.mypy.overrides]]
+module = ["googleapiclient.*", "google_auth_httplib2", "httplib2"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not e2e'"
+markers = ["e2e: hits the real Tag Manager API; needs GTM_MCP_E2E_CONTAINER"]

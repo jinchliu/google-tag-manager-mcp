@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # release.yml calls this workflow, so a tag is gated by exactly these checks.
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # uv reads .python-version; python-version here keeps the pin visible in the log.
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: '3.14'
+          enable-cache: true
+
+      # --locked fails the run when uv.lock is out of step with pyproject.toml.
+      - run: uv sync --locked
+
+      - run: uv run ruff check
+      - run: uv run ruff format --check
+      - run: uv run mypy
+
+      # The e2e marker is deselected by addopts in pyproject.toml; it needs a real
+      # container and credentials, so CI runs the offline suite only.
+      - run: uv run pytest

@@ -1,0 +1,14 @@
+{
+  "note": "Constant variable.",
+  "body": {
+    "name": "C - GA4 measurement ID",
+    "type": "c",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "value",
+        "value": "G-XXXXXXXXXX"
+      }
+    ]
+  }
+}

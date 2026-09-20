@@ -1,0 +1,60 @@
+{
+  "note": "Lookup table. input is the variable to match; map rows pair key with the output value.",
+  "body": {
+    "name": "LT - event name",
+    "type": "smm",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "input",
+        "value": "{{Event}}"
+      },
+      {
+        "type": "boolean",
+        "key": "setDefaultValue",
+        "value": "true"
+      },
+      {
+        "type": "template",
+        "key": "defaultValue",
+        "value": "other"
+      },
+      {
+        "type": "list",
+        "key": "map",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "key",
+                "value": "cus_add_to_cart"
+              },
+              {
+                "type": "template",
+                "key": "value",
+                "value": "add_to_cart"
+              }
+            ]
+          },
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "key",
+                "value": "cus_purchase"
+              },
+              {
+                "type": "template",
+                "key": "value",
+                "value": "purchase"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

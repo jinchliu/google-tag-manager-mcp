@@ -1,0 +1,39 @@
+{
+  "note": "Server container trigger: type always fires on every request and is narrowed with filter conditions on Client Name / Event Name (built-in variables clientName / eventName).",
+  "body": {
+    "name": "GA4 - purchase",
+    "type": "always",
+    "filter": [
+      {
+        "type": "equals",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "arg0",
+            "value": "{{Client Name}}"
+          },
+          {
+            "type": "template",
+            "key": "arg1",
+            "value": "GA4 Client"
+          }
+        ]
+      },
+      {
+        "type": "equals",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "arg0",
+            "value": "{{Event Name}}"
+          },
+          {
+            "type": "template",
+            "key": "arg1",
+            "value": "purchase"
+          }
+        ]
+      }
+    ]
+  }
+}

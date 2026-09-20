@@ -1,0 +1,24 @@
+{
+  "note": "All Elements click trigger (web) filtered on a built-in click variable; enable Click Classes with gtm_enable_built_in_variables first. Use type linkClick for link clicks.",
+  "body": {
+    "name": "Click - buy button",
+    "type": "click",
+    "filter": [
+      {
+        "type": "contains",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "arg0",
+            "value": "{{Click Classes}}"
+          },
+          {
+            "type": "template",
+            "key": "arg1",
+            "value": "btn-buy"
+          }
+        ]
+      }
+    ]
+  }
+}

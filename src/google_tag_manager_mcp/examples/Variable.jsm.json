@@ -1,0 +1,14 @@
+{
+  "note": "Custom JavaScript variable (web): an anonymous function returning the value.",
+  "body": {
+    "name": "CJS - page path",
+    "type": "jsm",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "javascript",
+        "value": "function() {\n  return document.location.pathname;\n}"
+      }
+    ]
+  }
+}

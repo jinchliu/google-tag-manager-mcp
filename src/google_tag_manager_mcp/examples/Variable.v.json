@@ -1,0 +1,24 @@
+{
+  "note": "Data Layer Variable (web). name is the dataLayer key path; dataLayerVersion 2 is the current data layer.",
+  "body": {
+    "name": "DLV - currency",
+    "type": "v",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "name",
+        "value": "ecommerce.currency"
+      },
+      {
+        "type": "integer",
+        "key": "dataLayerVersion",
+        "value": "2"
+      },
+      {
+        "type": "boolean",
+        "key": "setDefaultValue",
+        "value": "false"
+      }
+    ]
+  }
+}

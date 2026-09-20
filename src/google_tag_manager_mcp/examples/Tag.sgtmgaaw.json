@@ -1,0 +1,44 @@
+{
+  "note": "GA4 server-side tag (server container). eventParameters rows add or override parameters; fire it from an always-type trigger filtered on Client Name / Event Name.",
+  "body": {
+    "name": "GA4 - forward",
+    "type": "sgtmgaaw",
+    "parameter": [
+      {
+        "type": "boolean",
+        "key": "redactVisitorIp",
+        "value": "false"
+      },
+      {
+        "type": "template",
+        "key": "epToIncludeDropdown",
+        "value": "none"
+      },
+      {
+        "type": "list",
+        "key": "eventParameters",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "fieldName",
+                "value": "transaction_source"
+              },
+              {
+                "type": "template",
+                "key": "value",
+                "value": "server"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "firingTriggerId": [
+      "20"
+    ],
+    "tagFiringOption": "oncePerEvent"
+  }
+}

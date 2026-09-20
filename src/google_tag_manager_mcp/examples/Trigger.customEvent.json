@@ -1,0 +1,24 @@
+{
+  "note": "Custom event trigger (web). customEventFilter matches the dataLayer event name via {{_event}}; optional filter adds conditions. Condition parameters are arg0 / arg1 plus optional negate / ignore_case.",
+  "body": {
+    "name": "CE - purchase",
+    "type": "customEvent",
+    "customEventFilter": [
+      {
+        "type": "equals",
+        "parameter": [
+          {
+            "type": "template",
+            "key": "arg0",
+            "value": "{{_event}}"
+          },
+          {
+            "type": "template",
+            "key": "arg1",
+            "value": "purchase"
+          }
+        ]
+      }
+    ]
+  }
+}

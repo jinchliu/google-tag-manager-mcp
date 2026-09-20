@@ -1,0 +1,18 @@
+{
+  "note": "Google tag (web). tagId is the measurement id; 2147479573 is the built-in Initialization trigger (2147479553 is All Pages).",
+  "body": {
+    "name": "GA4 - Google tag",
+    "type": "googtag",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "tagId",
+        "value": "G-XXXXXXXXXX"
+      }
+    ],
+    "firingTriggerId": [
+      "2147479573"
+    ],
+    "tagFiringOption": "oncePerEvent"
+  }
+}

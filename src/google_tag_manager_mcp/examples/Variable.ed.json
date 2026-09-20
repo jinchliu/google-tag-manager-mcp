@@ -1,0 +1,19 @@
+{
+  "note": "Event Data variable (server container). keyPath addresses the incoming event data.",
+  "body": {
+    "name": "ED - value",
+    "type": "ed",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "keyPath",
+        "value": "value"
+      },
+      {
+        "type": "boolean",
+        "key": "setDefaultValue",
+        "value": "false"
+      }
+    ]
+  }
+}

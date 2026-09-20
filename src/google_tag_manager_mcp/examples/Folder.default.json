@@ -1,0 +1,7 @@
+{
+  "note": "Folders only carry a name and notes; move entities in with gtm_move_entities_to_folder.",
+  "body": {
+    "name": "GA4",
+    "notes": "Everything GA4-related"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "note": "Custom HTML tag (web). The html parameter holds the markup verbatim.",
+  "body": {
+    "name": "cHTML - example",
+    "type": "html",
+    "parameter": [
+      {
+        "type": "template",
+        "key": "html",
+        "value": "<script>console.log(\"hello\");</script>"
+      },
+      {
+        "type": "boolean",
+        "key": "supportDocumentWrite",
+        "value": "false"
+      }
+    ],
+    "firingTriggerId": [
+      "2147479553"
+    ],
+    "tagFiringOption": "oncePerEvent"
+  }
+}

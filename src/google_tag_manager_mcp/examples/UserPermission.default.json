@@ -1,0 +1,15 @@
+{
+  "note": "accountAccess.permission: noAccess / user / admin; containerAccess[].permission: noAccess / read / edit / approve / publish.",
+  "body": {
+    "emailAddress": "user@example.com",
+    "accountAccess": {
+      "permission": "user"
+    },
+    "containerAccess": [
+      {
+        "containerId": "456",
+        "permission": "edit"
+      }
+    ]
+  }
+}

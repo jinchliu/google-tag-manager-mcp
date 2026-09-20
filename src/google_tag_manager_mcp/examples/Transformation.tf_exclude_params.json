@@ -1,0 +1,35 @@
+{
+  "note": "Exclude-parameters transformation (server container).",
+  "body": {
+    "name": "Exclude debug params",
+    "type": "tf_exclude_params",
+    "parameter": [
+      {
+        "type": "list",
+        "key": "excludedParamsTable",
+        "list": [
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "excludedParams",
+                "value": "x-ga-gtm_version"
+              }
+            ]
+          },
+          {
+            "type": "map",
+            "map": [
+              {
+                "type": "template",
+                "key": "excludedParams",
+                "value": "x-ga-gcd"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
