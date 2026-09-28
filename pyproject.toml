@@ -4,6 +4,9 @@ version = "0.1.0"
 # Kept in step with SERVER_DESCRIPTION in server.py; tests/test_protocol.py asserts it.
 description = "A stdio MCP server for Google Tag Manager with full API coverage."
 readme = "README.md"
+authors = [
+    { name = "Jinchao Liu", email = "jinchaoliu09@gmail.com" },
+]
 license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.14"
@@ -31,7 +34,6 @@ dependencies = [
     "mcp>=2.2,<3",
 ]
 
-# PyPI freezes these per version, so they have to be right before the first tag.
 [project.urls]
 Homepage = "https://github.com/jinchliu/google-tag-manager-mcp"
 Repository = "https://github.com/jinchliu/google-tag-manager-mcp"
